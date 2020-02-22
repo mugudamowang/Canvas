@@ -1,8 +1,42 @@
 ::-webkit-scrollbar{display:none}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+img{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 45%;
+    right: 55%;
+}
+
 #mugu{
     background:rgba(0, 43, 54, 0.637);
     display: block;
+    position: relative;
     /* css设置交界面宽高只是缩小放大,实际效果会出bug  height= 100vh */
+}
+
+#colorpicker{
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+}
+#colorpicker li{
+    margin: 3px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0px 25px 0 rgba(126, 126, 126, 0.815), inset 0 0px 15px 0 rgba(87, 87, 87, 0.363);
+}
+.picker{
+    position: absolute;
+    left: 40px;top: 60px;
 }
 
 body{

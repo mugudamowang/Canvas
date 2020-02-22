@@ -4,10 +4,22 @@
 <head>
     <title>Canvas of mugu</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="./colorpicker.js">
+    </script>
+
 </head>
+
 <body>
-    <canvas id="mugu"  width="300" height="300"></canvas>
+    <img src="./favicon.png" alt="">
+    <canvas id="mugu" width="300" height="300"></canvas>
+    <ul id="colorpicker" class="clearfix">
+        <li style="background-color: blue; " id="blue"></li>
+        <li style="background-color: yellow" id="yellow"></li>
+        <li style="background-color: green;"id="green"></li>
+        <li style="background-color: black;"  id = "hex" class="picker"></li>
+    </ul>
+
 </body>
-<script src="main.js"></script>
+<script src="./main.js"></script>
+
 </html>
