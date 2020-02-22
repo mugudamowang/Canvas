@@ -1,9 +1,13 @@
+::-webkit-scrollbar{display:none}
 #mugu{
-    background: rgb(0,43,54);
+    background:rgba(0, 43, 54, 0.637);
     display: block;
+    /* css设置交界面宽高只是缩小放大,实际效果会出bug  height= 100vh */
 }
 
 body{
+    
+    background-image: url(./bg.png);
     margin: 0;
     padding: 0;
 }
