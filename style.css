@@ -1,11 +1,41 @@
-::-webkit-scrollbar{display:none}
+input,img{
+    margin: 0;
+    padding: 0;
 
-.clearfix::after{
+}
+
+#shift {
+    position: fixed;
+    top: 150px;
+}
+
+#shift>#drawpen {
+    width:100px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./drawpen.png);
+    background-color: transparent;
+    border: none ;
+
+}
+
+#shift>#eraser {
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 30px;
+    background-size: contain;
+    background-image: url(./era.png);
+    background-color: transparent;
+    border: none ;
+}
+.clearfix::after {
     content: '';
     display: block;
     clear: both;
 }
-img{
+
+#logo {
     position: fixed;
     margin: 0;
     padding: 0;
@@ -13,36 +43,48 @@ img{
     right: 55%;
 }
 
-#mugu{
-    background:rgba(0, 43, 54, 0.637);
+#mugu {
+    background: rgba(0, 43, 54, 0.637);
     display: block;
     position: relative;
     /* css设置交界面宽高只是缩小放大,实际效果会出bug  height= 100vh */
 }
 
-#colorpicker{
+#colorpicker {
     position: absolute;
     top: 0;
-    left: 0;
+    padding: 10px;
     list-style-type: none;
 }
-#colorpicker li{
+
+#colorpicker li {
     margin: 3px;
     float: left;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     box-shadow: 0 0px 25px 0 rgba(126, 126, 126, 0.815), inset 0 0px 15px 0 rgba(87, 87, 87, 0.363);
-}
-.picker{
-    position: absolute;
-    left: 40px;top: 60px;
+    position: relative;
 }
 
-body{
-    
+.labelForP{
+    position: absolute;
+    font-size: small;
+    color: aliceblue;
+    top: 15px;
+    left: 5px;
+}
+
+footer{
+    color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+body {
+    overflow: hidden;
     background-image: url(./bg.png);
     margin: 0;
     padding: 0;
 }
-

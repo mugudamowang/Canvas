@@ -10,15 +10,21 @@
 </head>
 
 <body>
-    <img src="./favicon.png" alt="">
+    <img src="./favicon.png" alt="" id ='logo'>
     <canvas id="mugu" width="300" height="300"></canvas>
     <ul id="colorpicker" class="clearfix">
         <li style="background-color: blue; " id="blue"></li>
         <li style="background-color: yellow" id="yellow"></li>
+        <br>
         <li style="background-color: green;"id="green"></li>
-        <li style="background-color: black;"  id = "hex" class="picker"></li>
+        <li style="background-color: black;"  id = "hex" class="picker"><label class="labelForP">picker</label></li>
     </ul>
-
+    <div id="shift">
+        <input  type="button"  id = 'eraser'>
+        <br>
+        <input type = "button"  id = 'drawpen'>
+    </div>
+    <footer>BLACKBOARD2.0</footer>
 </body>
 <script src="./main.js"></script>
 
