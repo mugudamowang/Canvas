@@ -91,9 +91,54 @@ function drawCricle(pendown, radius) {
     ctx.fill()
 }
 
+
+
+
+
 //监听事件
 function listenTomouse(canvas) {
+    if (document.body.ontouchstart !== undefined) {
+        canvas.ontouchstart = function (touchstart) {
+            var x = touchstart.touches[0].clientX
+            var y = touchstart.touches[0].clientY
+            penable = true
 
+            if (eraserable) {
+                ctx.clearRect(x - 7.5, y - 7.5, 15, 15)
+            } else {
+
+                drawLine(touchstart.touches[0], 7)//补充间隙
+                drawCricle(touchstart.touches[0], 3)//粉笔开始效果
+            }
+
+        }
+
+        //移动鼠标
+        canvas.ontouchmove = function (touchmove) {
+            var x = touchmove.touches[0].clientX
+            var y = touchmove.touches[0].clientY
+
+            if (!penable) { return }
+
+            if (eraserable) {
+                ctx.clearRect(x - 7.5, y - 7.5, 20, 20)
+            } else {
+                drawLine(touchmove.touches[0], 7)
+            }
+        }
+        //松开手指
+        canvas.ontouched = function (touched) {
+            if (!penable) {
+                drawLine(touched.touches[0], 7)
+                drawCricle(touched.touches[0], 3)
+            }
+            penable = false
+            lastpoint = {
+                'x': undefined,
+                'y': undefined
+            }
+        }
+} else {
     //按下去
     canvas.onmousedown = function (pendown) {
         var x = pendown.clientX
@@ -102,7 +147,7 @@ function listenTomouse(canvas) {
 
 
         if (eraserable) {
-            ctx.clearRect(x-7.5,y-7.5,15,15)
+            ctx.clearRect(x - 7.5, y - 7.5, 15, 15)
         } else {
 
             drawLine(pendown, 7)//补充间隙
@@ -119,7 +164,7 @@ function listenTomouse(canvas) {
         if (!penable) { return }
 
         if (eraserable) {
-            ctx.clearRect(x-7.5,y-7.5,20,20)
+            ctx.clearRect(x - 7.5, y - 7.5, 20, 20)
         } else {
             drawLine(penmove, 7)
         }
@@ -136,4 +181,5 @@ function listenTomouse(canvas) {
             'y': undefined
         }
     }
+}
 }
