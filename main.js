@@ -127,8 +127,9 @@ function listenTomouse(canvas) {
             }
         }
         //松开手指
-        canvas.ontouched = function (touched) {
+        canvas.ontouchend = function (touched) {
             if (!penable) {
+                console.log('hello')
                 drawLine(touched.touches[0], 7)
                 drawCricle(touched.touches[0], 3)
             }
