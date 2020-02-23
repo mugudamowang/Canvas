@@ -38,9 +38,16 @@ listenTomouse(canvas)
 var eraserable = false
 eraser.onclick = function () {
     eraserable = true
+    eraser.classList.add('ative')
+    drawpen.classList.remove('ative')
 }
 drawpen.onclick = function () {
     eraserable = false
+    drawpen.classList.add('ative')
+    eraser.classList.remove('ative')
+}
+clearkit.onclick = function (){
+    ctx.clearRect(0,0,canvas.width,canvas.height)
 }
 
 

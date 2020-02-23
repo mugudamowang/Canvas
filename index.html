@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas of mugu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="//at.alicdn.com/t/font_1652933_ff6n3gdmhkg.js"></script>
     <script src="./colorpicker.js">
     </script>
 </head>
 
 <body>
-    <img src="./favicon.png" alt="" id ='logo'>
+    <img src="./favicon.png" alt="" id='logo'>
     <canvas id="mugu" width="300" height="300"></canvas>
     <ul id="colorpicker" class="clearfix">
         <li style="background-color: blue; " id="blue"></li>
         <li style="background-color: yellow" id="yellow"></li>
         <br>
-        <li style="background-color: green;"id="green"></li>
-        <li style="background-color: black;"  id = "hex" class="picker"><label class="labelForP">picker</label></li>
+        <li style="background-color: green;" id="green"></li>
+        <li style="background-color: black;" id="hex" class="picker"><label class="labelForP">picker</label></li>
     </ul>
+    
     <div id="shift">
-        <input  type="button"  id = 'eraser'>
-        <br>
-        <input type = "button"  id = 'drawpen'>
+        <svg id = 'eraser' class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xiangpica"></use>
+        </svg><br>
+        <svg id = 'drawpen' class="icon" aria-hidden="true">
+            <use xlink:href="#icon-huabi"></use>
+        </svg><br>
+        <svg id = 'saveimg' class="icon" aria-hidden="true">
+            <use xlink:href="#icon-save"></use>
+        </svg><br>
+        <svg id = 'clearkit' class="icon" aria-hidden="true">
+            <use xlink:href="#icon-saoba"></use>
+        </svg>
     </div>
-    <footer>BLACKBOARD2.0</footer>
+    <footer>BLACKBOARD2.3</footer>
 </body>
-<script src="./main.js"></script>
-
-</html>
+<script src=" ./main.js"> </script> </html>
