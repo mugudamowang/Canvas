@@ -73,11 +73,15 @@ img {
 }
 
 .labelForP {
-    position: absolute;
+    line-height: 16px;
+    vertical-align: middle;
+    text-align: center;
+    color: aliceblue;
+    /* position: absolute;
     font-size: small;
     color: aliceblue;
     top: 15px;
-    left: 5px;
+    left: 5px; */
 }
 
 footer {
