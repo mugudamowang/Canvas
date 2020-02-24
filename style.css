@@ -1,5 +1,5 @@
 input,img,body{margin: 0;padding: 0;}
-footer {color: aliceblue;position: fixed;bottom: 0;right: 0;}
+footer {color: rgb(114, 113, 113);position: fixed;bottom: 0;right: 0;}
 body {
     cursor  : url(https://i.loli.net/2020/02/24/Yl78pI9aZHbyhuD.gif) 2 32, auto;
     overflow: hidden;background-image: url(./bg.png);}
@@ -9,7 +9,7 @@ body {
 #shift>div>svg:hover {box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);transform: scale(1.2);transition: all 0.2s ease-in-out;}
 .clearfix::after {content: '';display: block;clear: both;}
 #logo {position: fixed;margin: 0;padding: 0;right: 0;}
-#mugu {background: rgba(0, 43, 54, 0.637);display: block;position: relative; /* css设置界面宽高只是缩小放大,实际效果会出bug  height= 100vh */}
+#mugu {top: 0;left: 0;background: rgba(0, 43, 54, 0.637);display: block;position: fixed; /* css设置界面宽高只是缩小放大,实际效果会出bug  height= 100vh */}
 #colorpicker {position: absolute;top: 0;padding: 10px;list-style-type: none;}
 #colorpicker li {margin: 3px;float: left;width: 50px;height: 50px;border-radius: 50%;box-shadow: 0 0px 25px 0 rgba(126, 126, 126, 0.815), inset 0 0px 15px 0 rgba(87, 87, 87, 0.363);position: relative;}
 #labelForP {line-height: 16px;vertical-align: middle;text-align: center;color: aliceblue;}

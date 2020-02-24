@@ -9,7 +9,10 @@ var lastpoint = {
     'y': undefined
 }
 
-
+//设置移动端屏幕buhuadong
+// document.body.ontouchstart = function( e){
+//     e.preventDefault()
+// }
 
 //设置颜色 操作
 choseColor(pen)
