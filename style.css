@@ -1,6 +1,8 @@
 input,img,body{margin: 0;padding: 0;}
 footer {color: aliceblue;position: fixed;bottom: 0;right: 0;}
-body {overflow: hidden;background-image: url(./bg.png);}
+body {
+    cursor  : url(https://i.loli.net/2020/02/24/Yl78pI9aZHbyhuD.gif) 2 32, auto;
+    overflow: hidden;background-image: url(./bg.png);}
 #shift {position: fixed;top: 150px;}
 #shift>div>svg {margin: 10px 14px;padding: 8px;width: 35px;height: 35px;border-radius: 50%;}
 #shift>div>svg.ative {box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);transform: scale(1.2);transition: all 0.2s ease-in-out;}
