@@ -49,6 +49,17 @@ drawpen.onclick = function () {
 clearkit.onclick = function (){
     ctx.clearRect(0,0,canvas.width,canvas.height)
 }
+saveimg.onclick = function (){
+    var url = canvas.toDataURL('image/png')
+    var a  = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = '宁吃了吗'
+    a.target = '_blank'
+    a.click()
+
+
+}
 
 
 
@@ -60,6 +71,9 @@ clearkit.onclick = function (){
 function choseColor(pen) {
     for (index = 0; index < 3; index++) {
         pen[index].onclick = function (xxx) {
+            drawpen.classList.add('ative')
+            eraser.classList.remove('ative')
+            eraserable = false
             pencolor = xxx.toElement.id
         }
     }
