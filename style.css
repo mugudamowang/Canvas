@@ -1,99 +1,13 @@
-input,
-img {
-    margin: 0;
-    padding: 0;
-
-}
-
-#shift {
-    position: fixed;
-    top: 150px;
-}
-
-#shift> div >svg {
-    margin: 10px 14px;
-    padding: 8px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-}
-
-
-
-#shift > div > svg.ative {
-
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
-    transform: scale(1.2);
-    transition: all 0.2s ease-in-out;
-}
-
-#shift > div >  svg:hover{
-    
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
-    transform: scale(1.2);
-    transition: all 0.2s ease-in-out;
-}
-
-.clearfix::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-#logo {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    left: 45%;
-    right: 55%;
-}
-
-#mugu {
-    background: rgba(0, 43, 54, 0.637);
-    display: block;
-    position: relative;
-    /* css设置交界面宽高只是缩小放大,实际效果会出bug  height= 100vh */
-}
-
-#colorpicker {
-    position: absolute;
-    top: 0;
-    padding: 10px;
-    list-style-type: none;
-}
-
-#colorpicker li {
-    margin: 3px;
-    float: left;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 0px 25px 0 rgba(126, 126, 126, 0.815), inset 0 0px 15px 0 rgba(87, 87, 87, 0.363);
-    position: relative;
-}
-
-.labelForP {
-    line-height: 16px;
-    vertical-align: middle;
-    text-align: center;
-    color: aliceblue;
-    /* position: absolute;
-    font-size: small;
-    color: aliceblue;
-    top: 15px;
-    left: 5px; */
-}
-
-footer {
-    color: aliceblue;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-}
-
-body {
-    overflow: hidden;
-    background-image: url(./bg.png);
-    margin: 0;
-    padding: 0;
-}
+input,img,body{margin: 0;padding: 0;}
+footer {color: aliceblue;position: fixed;bottom: 0;right: 0;}
+body {overflow: hidden;background-image: url(./bg.png);}
+#shift {position: fixed;top: 150px;}
+#shift>div>svg {margin: 10px 14px;padding: 8px;width: 35px;height: 35px;border-radius: 50%;}
+#shift>div>svg.ative {box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);transform: scale(1.2);transition: all 0.2s ease-in-out;}
+#shift>div>svg:hover {box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);transform: scale(1.2);transition: all 0.2s ease-in-out;}
+.clearfix::after {content: '';display: block;clear: both;}
+#logo {position: fixed;margin: 0;padding: 0;right: 0;}
+#mugu {background: rgba(0, 43, 54, 0.637);display: block;position: relative; /* css设置界面宽高只是缩小放大,实际效果会出bug  height= 100vh */}
+#colorpicker {position: absolute;top: 0;padding: 10px;list-style-type: none;}
+#colorpicker li {margin: 3px;float: left;width: 50px;height: 50px;border-radius: 50%;box-shadow: 0 0px 25px 0 rgba(126, 126, 126, 0.815), inset 0 0px 15px 0 rgba(87, 87, 87, 0.363);position: relative;}
+#labelForP {line-height: 16px;vertical-align: middle;text-align: center;color: aliceblue;}
