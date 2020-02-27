@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div id="site-loading">
+        <img class='loading' src="https://i.loli.net/2020/02/27/IZsi4CKWM8ngeSo.gif" />
+    </div>
     <img src="./favicon.png" alt="" id='logo'>
     <canvas id="mugu" width="300" height="300"></canvas>
     <ul id="colorpicker" class="clearfix">
@@ -18,7 +21,9 @@
         <li style="background-color: yellow" id="yellow"></li>
         <br>
         <li style="background-color: green;" id="green"></li>
-        <li style="background-color: black;" id="hex" class="picker"><p id="labelForP">picker</p></li>
+        <li style="background-color: black;" id="hex" class="picker">
+            <p id="labelForP">picker</p>
+        </li>
     </ul>
 
     <div id="shift">
@@ -35,7 +40,7 @@
             </svg>
             <br>
         </div>
-        
+
         <div title="👴要保存">
             <svg id='saveimg' class="" aria-hidden="true">
                 <use xlink:href="#icon-save"></use>
@@ -49,6 +54,11 @@
     </div>
     <footer>BLACKBOARD2.3.6</footer>
 </body>
+<script>
+    setTimeout(function () {
+        var element = document.getElementById('site-loading');
+        element.parentNode.removeChild(element);
+    }, 2000)
+</script>
 <script src=" ./main.js"> </script>
-
 </html>
