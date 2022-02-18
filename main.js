@@ -78,7 +78,7 @@ function choseColor(pen) {
             drawpen.classList.add('ative')
             eraser.classList.remove('ative')
             eraserable = false
-            pencolor = xxx.toElement.id
+            pencolor = xxx.target.id
         }
     }
 }
