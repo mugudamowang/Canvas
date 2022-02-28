@@ -9,7 +9,7 @@ var lastpoint = {
     'y': undefined
 }
 
-//设置移动端屏幕buhuadong
+//设置移动端屏幕防晃动
 // document.body.ontouchstart = function( e){
 //     e.preventDefault()
 // }
@@ -38,10 +38,18 @@ Colorpicker.create({
 //监听鼠标 操作
 listenTomouse(canvas)
 
+
+//获取对象
+let eraser = document.getElementById('eraser');
+let drawpen = document.getElementById('drawpen');
+let clearkit = document.getElementById('clearkit');
+let saveImg = document.getElementById('saveImg');
+
 //工具切换 状态
 var eraserable = false
 eraser.onclick = function () {
     eraserable = true
+    console.log("object");
     eraser.classList.add('ative')
     drawpen.classList.remove('ative')
 }
@@ -53,7 +61,7 @@ drawpen.onclick = function () {
 clearkit.onclick = function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
-saveimg.onclick = function () {
+saveImg.onclick = function () {
     var url = canvas.toDataURL('image/png')
     var a = document.createElement('a')
     document.body.appendChild(a)
@@ -61,8 +69,7 @@ saveimg.onclick = function () {
     a.download = '宁吃了吗'
     a.target = '_blank'
     a.click()
-
-
+    console.log(a);
 }
 
 
@@ -70,6 +77,13 @@ saveimg.onclick = function () {
 //function----------------------------------------------------------------
 
 //圆形橡皮檫
+function onEraser(canvas, erasersize) {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(canvas.clientX, canvas.clientY, erasersize, 0, Math.PI*2, false);
+    ctx.fill();
+    ctx.closePath();    
+}
 
 //色卡选择
 function choseColor(pen) {
@@ -93,20 +107,22 @@ function setCanvasSize(canvas) {
 
 //画线函数
 function drawLine(canvas, linewidth) {
-    var x = canvas.clientX
+    ctx.globalCompositeOperation = "source-over"
+    var x = canvas.clientX  //clientX/Y获取到的是触发点相对浏览器可视区域左上角距离，不随页面滚动而改变
     var y = canvas.clientY
     var newpoint = { 'x': x, 'y': y }
     ctx.strokeStyle = pencolor
     ctx.beginPath()
     ctx.lineWidth = linewidth
-    ctx.moveTo(lastpoint.x, lastpoint.y)
-    ctx.lineTo(newpoint.x, newpoint.y)
+    ctx.moveTo(lastpoint.x, lastpoint.y)    //从旧点.
+    ctx.lineTo(newpoint.x, newpoint.y)      //画到新点.
     ctx.stroke()
     ctx.closePath()
-    lastpoint = newpoint
+    lastpoint = newpoint    //全局变量中的lastpoint在移动画笔时还要用. 所以要记录位置
 }
 
-//画圈f
+
+//画圈
 function drawCricle(pendown, radius) {
     var x = pendown.clientX
     var y = pendown.clientY
@@ -173,9 +189,9 @@ function listenTomouse(canvas) {
 
 
             if (eraserable) {
-                ctx.clearRect(x - 7.5, y - 7.5, 15, 15)
+                // ctx.clearRect(x - 7.5, y - 7.5, 50, 50)
+                onEraser(pendown,10)
             } else {
-
                 drawLine(pendown, 7)//补充间隙
                 drawCricle(pendown, 3)//粉笔开始效果
             }
@@ -190,14 +206,14 @@ function listenTomouse(canvas) {
             if (!penable) { return }
 
             if (eraserable) {
-                ctx.clearRect(x - 7.5, y - 7.5, 20, 20)
+                onEraser(penmove,10)
             } else {
                 drawLine(penmove, 7)
             }
         }
         //松开鼠标
         canvas.onmouseup = function (penup) {
-            if (!penable) {
+            if (!eraserable) {
                 drawLine(penup, 7)
                 drawCricle(penup, 3)
             }
